@@ -1,0 +1,409 @@
+@import url(https://fonts.googleapis.com/css?family=Aclonica);
+@import url(https://fonts.googleapis.com/css?family=Lato);
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  font-size: 100%;
+  font-family: "Helvetica", sans-serif;
+  background-color: #f2f2f2; }
+
+.wrong {
+  border: 1px solid red !important; }
+
+.show {
+  margin-right: 10px;
+  position: relative;
+  background-color: #222;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  width: 25%; }
+  .show::before, .show::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0%;
+    height: 3px;
+    background: red;
+    transition: .2s width ease-in-out; }
+  .show::before {
+    left: 0; }
+  .show:hover::after {
+    width: 25%; }
+
+/* NAVIGATION */
+nav ul {
+  list-style: none;
+  background: #444; }
+  nav ul li {
+    border-bottom: 1px solid slategray;
+    position: relative; }
+    nav ul li a {
+      color: #ddd;
+      font-weight: bold;
+      text-decoration: none;
+      padding: .8rem 1rem;
+      display: block;
+      line-height: 1;
+      text-align: center; }
+      nav ul li a.active {
+        border-bottom: 3px solid red !important; }
+      nav ul li a::before, nav ul li a::after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: -1px;
+        right: 0;
+        width: 0%;
+        height: 3px;
+        background: red;
+        transition: .2s width ease-in-out; }
+      nav ul li a::before {
+        left: 0; }
+      nav ul li a:hover::after, nav ul li a:hover::before {
+        width: 50%; }
+
+nav .logo {
+  background: #222;
+  font-size: 16px; }
+  nav .logo h1 {
+    color: slategray;
+    padding: 0.8rem 1rem;
+    font-family: Aclonica, sans-serif;
+    letter-spacing: 10px;
+    text-align: center;
+    line-height: 1; }
+  nav .logo span {
+    color: red; }
+
+/* INTRO */
+.intro-div {
+  width: 100%;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center; }
+  .intro-div .intro-text {
+    position: absolute;
+    top: 40%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column; }
+  .intro-div .intro {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 160px;
+    overflow: hidden;
+    font-family: 'Lato', sans-serif;
+    font-size: 35px;
+    line-height: 40px;
+    color: slategray; }
+    .intro-div .intro-container {
+      font-weight: 600;
+      overflow: hidden;
+      height: 40px;
+      padding: 0 40px; }
+      .intro-div .intro-container:before {
+        content: '[';
+        left: 0; }
+      .intro-div .intro-container:after {
+        content: ']';
+        position: absolute;
+        right: 0; }
+      .intro-div .intro-container:after, .intro-div .intro-container:before {
+        position: absolute;
+        top: 0;
+        color: red;
+        font-size: 42px;
+        line-height: 40px;
+        -webkit-animation-name: opacity;
+        -webkit-animation-duration: 2s;
+        -webkit-animation-iteration-count: infinite;
+        animation-name: opacity;
+        animation-duration: 2s;
+        animation-iteration-count: infinite; }
+      .intro-div .intro-container-text {
+        display: inline;
+        float: left;
+        margin: 0; }
+      .intro-div .intro-container-list {
+        margin-top: 0;
+        padding-left: 110px;
+        text-align: left;
+        list-style: none;
+        -webkit-animation-name: change;
+        -webkit-animation-duration: 10s;
+        -webkit-animation-iteration-count: infinite;
+        animation-name: change;
+        animation-duration: 10s;
+        animation-iteration-count: infinite; }
+        .intro-div .intro-container-list-item {
+          line-height: 40px;
+          margin: 0; }
+
+@keyframes opacity {
+  0%, 100% {
+    opacity: 0; }
+  50% {
+    opacity: 1; } }
+
+@keyframes change {
+  0%, 12.66%, 100% {
+    transform: translate3d(0, 0, 0); }
+  16.66%, 29.32% {
+    transform: translate3d(0, -25%, 0); }
+  33.32%, 45.98% {
+    transform: translate3d(0, -50%, 0); }
+  49.98%, 62.64% {
+    transform: translate3d(0, -75%, 0); }
+  66.64%, 79.3% {
+    transform: translate3d(0, -50%, 0); }
+  83.3%, 95.96% {
+    transform: translate3d(0, -25%, 0); } }
+
+/* REVIEW */
+.table-div {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-top: 30px; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+  font-size: 16px; }
+  table th {
+    background-color: slategray;
+    color: white; }
+  table th, table td {
+    text-align: center;
+    padding: 16px;
+    border-bottom: 1px dotted slategray;
+    word-wrap: break-word; }
+  table tr:nth-child(even) {
+    background-color: #C4C7CB; }
+
+/* ADD */
+input[type=text], textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical; }
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+  font-weight: bold; }
+
+.submit-row, .button-row {
+  display: flex;
+  justify-content: flex-end;
+  position: relative; }
+  .submit-row button, .button-row button {
+    background-color: #222;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    width: 25%; }
+    .submit-row button.show::before, .submit-row button.show::after, .button-row button.show::before, .button-row button.show::after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 0%;
+      height: 3px;
+      background: red;
+      transition: .2s width ease-in-out; }
+    .submit-row button.show::before, .button-row button.show::before {
+      left: 0; }
+    .submit-row button.show:hover::after, .button-row button.show:hover::after {
+      width: 100%; }
+    .submit-row button.check::before, .submit-row button.check::after, .button-row button.check::before, .button-row button.check::after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 0%;
+      height: 3px;
+      background: red;
+      transition: .2s width ease-in-out; }
+    .submit-row button.check::before, .button-row button.check::before {
+      left: 0; }
+    .submit-row button.check:hover::after, .button-row button.check:hover::after {
+      width: 25%; }
+
+.form-div {
+  margin-top: 10px; }
+
+/* LEARN */
+.choice-div {
+  height: 50px;
+  background-color: #444; }
+  .choice-div div {
+    width: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center; }
+    .choice-div div a {
+      color: #ddd;
+      font-weight: bold;
+      text-decoration: none;
+      padding: 1rem 1rem;
+      display: block;
+      line-height: 1;
+      text-align: center;
+      height: 100%;
+      width: 100%; }
+
+.word-row {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center; }
+  .word-row h2 {
+    width: 80%;
+    text-align: center; }
+
+/* RWD */
+@media only screen and (max-width: 600px) {
+  table, thead, tbody, th, td, tr {
+    display: block; }
+  td {
+    width: 90% !important; }
+  .intro-div {
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .intro-div .intro {
+      position: absolute;
+      top: 60%;
+      left: 50%; }
+    .intro-div .intro-text {
+      position: absolute;
+      top: 60%; }
+  .form-div {
+    display: flex;
+    justify-content: center; }
+    .form-div form {
+      width: 80%; }
+      .form-div form .col-25, .form-div form .col-75 {
+        width: 100%;
+        margin-top: 0;
+        display: flex;
+        justify-content: center; }
+      .form-div form .col-25 {
+        text-align: center; }
+      .form-div form .word-row {
+        margin-top: 20px;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: center; }
+        .form-div form .word-row h2 {
+          width: 80%;
+          text-align: center;
+          word-wrap: break-word; }
+      .form-div form .submit-row, .form-div form .button-row {
+        display: flex;
+        justify-content: center; }
+        .form-div form .submit-row button, .form-div form .button-row button {
+          width: 100%;
+          margin-top: 20px; }
+          .form-div form .submit-row button.show::before, .form-div form .submit-row button.show::after, .form-div form .button-row button.show::before, .form-div form .button-row button.show::after {
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 0%;
+            height: 3px;
+            background: red;
+            transition: .2s width ease-in-out; }
+          .form-div form .submit-row button.show::before, .form-div form .button-row button.show::before {
+            left: 0; }
+          .form-div form .submit-row button.show:hover::before, .form-div form .submit-row button.show:hover::after, .form-div form .button-row button.show:hover::before, .form-div form .button-row button.show:hover::after {
+            width: 50%; }
+          .form-div form .submit-row button.check::before, .form-div form .submit-row button.check::after, .form-div form .button-row button.check::before, .form-div form .button-row button.check::after {
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 0%;
+            height: 3px;
+            background: red;
+            transition: .2s width ease-in-out; }
+          .form-div form .submit-row button.check::before, .form-div form .button-row button.check::before {
+            left: 0; }
+          .form-div form .submit-row button.check:hover::after, .form-div form .button-row button.check:hover::after {
+            width: 49%; } }
+
+@media only screen and (min-width: 600px) {
+  nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: #222; }
+    nav ul {
+      display: flex;
+      align-items: center;
+      background: none; }
+      nav ul li {
+        border-bottom: none;
+        position: relative; }
+        nav ul li a {
+          padding: 1.2rem 1rem;
+          border-bottom: none; }
+          nav ul li a.active {
+            border-bottom: 3px solid red !important; }
+    nav .logo h1 {
+      margin: .4rem 1rem; }
+  table {
+    width: 80%; }
+  .form-div {
+    display: flex;
+    justify-content: center; }
+    .form-div form {
+      width: 60%; }
+      .form-div form .row {
+        width: 100%; }
+        .form-div form .row .col-25 {
+          float: left;
+          width: 20%;
+          margin-top: 6px;
+          text-align: right; }
+        .form-div form .row .col-75 {
+          float: left;
+          width: 80%;
+          margin-top: 6px; }
+      .form-div form .row:after, .form-div form .submit-row:after {
+        content: "";
+        display: table;
+        clear: both; } }
+

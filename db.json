@@ -1,0 +1,69 @@
+{
+  "words": [
+    {
+      "id": 1,
+      "polish": "być",
+      "english": "to be",
+      "german": "sein",
+      "spanish": "estar/ser"
+    },
+    {
+      "id": 2,
+      "polish": "mieć",
+      "english": "to have",
+      "german": "haben",
+      "spanish": "tener"
+    },
+    {
+      "id": 3,
+      "polish": "pić",
+      "english": "to drink",
+      "german": "trinken",
+      "spanish": "beber"
+    },
+    {
+      "polish": "spać",
+      "english": "to sleep",
+      "german": "schlafen",
+      "spanish": "dormir",
+      "id": 4
+    },
+    {
+      "polish": "jeść",
+      "english": "to eat",
+      "german": "essen",
+      "spanish": "comer",
+      "id": 5
+    },
+    {
+      "polish": "kochać",
+      "english": "to love",
+      "german": "lieben",
+      "spanish": "amar",
+      "id": 6
+    },
+    {
+      "polish": "iść",
+      "english": "to go",
+      "german": "gehen",
+      "spanish": "ir",
+      "id": 7
+    }
+  ],
+  "sentences": [
+    {
+      "id": 1,
+      "polish": "Kocham Cię",
+      "english": "I love you",
+      "german": "Ich liebe dich",
+      "spanish": "Te amo"
+    },
+    {
+      "id": 2,
+      "polish": "Mam 12 lat",
+      "english": "I'm 12 years old",
+      "german": "Ich bin 12 Jahre alt",
+      "spanish": "Tengo 12 anos"
+    }
+  ]
+}
