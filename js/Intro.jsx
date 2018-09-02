@@ -25,7 +25,7 @@ const Intro = () => {
                 <p>Choose if you want to review single words and phrases or whole sentences.</p>
                 <h3>Add</h3>
                 <p>You can easily add new items to your vocabulary lists and create your own sets of words.</p>
-                </div>
+            </div>
         </div>
     )
 };
