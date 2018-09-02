@@ -101,7 +101,8 @@ nav .logo {
     flex-direction: column; }
     .intro-div .intro-text h3 {
       font-size: 26px;
-      font-family: Aclonica, sans-serif; }
+      font-family: Aclonica, sans-serif;
+      letter-spacing: 5px; }
     .intro-div .intro-text p {
       font-size: 26px;
       padding: 1rem;
