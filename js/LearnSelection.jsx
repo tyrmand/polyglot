@@ -16,10 +16,10 @@ const LearnSelection = () => (
             <div>
                 <div className="choice-div">
                     <div>
-                        <NavLink exact to='/learn/word' activeStyle={activeStyle}>Learn Words</NavLink>
+                        <NavLink exact to='/learn/word' activeStyle={activeStyle}>Word</NavLink>
                     </div>
                     <div>
-                        <NavLink to='/learn/sentence' activeStyle={activeStyle}>Learn Sentences</NavLink>
+                        <NavLink to='/learn/sentence' activeStyle={activeStyle}>Sentence</NavLink>
                     </div>
                 </div>
                 <Switch>

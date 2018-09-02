@@ -52,10 +52,14 @@ class Add extends React.Component {
             headers: { "Content-Type": "application/json" }
         })
             .then(resp => resp.json())
-            .then(data => {
-                console.log(data);
-            });
-    } // TODO: wyczyścić inputy po submit
+            .then(
+                this.setState({
+                    polish: "",
+                    english: "",
+                    german: "",
+                    spanish: "",
+            }))
+    }
 
     render() {
         return (

@@ -16,10 +16,10 @@ const ReviewSelection = () => (
             <div>
                 <div className="choice-div">
                     <div>
-                        <NavLink exact to='/review/word' activeStyle={activeStyle}>Review Words</NavLink>
+                        <NavLink exact to='/review/word' activeStyle={activeStyle}>Word</NavLink>
                     </div>
                     <div>
-                        <NavLink exact to='/review/sentence' activeStyle={activeStyle}>Review Sentences</NavLink>
+                        <NavLink exact to='/review/sentence' activeStyle={activeStyle}>Sentence</NavLink>
                     </div>
                 </div>
                 <Switch>

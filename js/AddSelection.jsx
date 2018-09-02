@@ -13,10 +13,10 @@ const AddSelection = () => (
             <div>
                 <div className="choice-div">
                     <div>
-                        <NavLink exact to='/add/word' activeStyle={activeStyle}>Add Words</NavLink>
+                        <NavLink exact to='/add/word' activeStyle={activeStyle}>Word</NavLink>
                     </div>
                     <div>
-                        <NavLink exact to='/add/sentence' activeStyle={activeStyle}>Add Sentences</NavLink>
+                        <NavLink exact to='/add/sentence' activeStyle={activeStyle}>Sentence</NavLink>
                     </div>
                 </div>
                 <Switch>

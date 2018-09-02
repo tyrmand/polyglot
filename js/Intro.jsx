@@ -22,7 +22,7 @@ const Intro = () => {
                 <h3>Learn</h3>
                 <p>Face the challenge of randomly drawn sets of words and sentences.</p>
                 <h3>Review</h3>
-                <p>Choose if you want to review single words and phrases or whole sentences and pick a right table.</p>
+                <p>Choose if you want to review single words and phrases or whole sentences.</p>
                 <h3>Add</h3>
                 <p>You can easily add new items to your vocabulary lists and create your own sets of words.</p>
                 </div>
