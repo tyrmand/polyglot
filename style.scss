@@ -132,7 +132,21 @@ nav {
             font-size: 26px;
             padding: 1rem;
             margin: 2rem;
-        }      
+        }   
+        .logo {
+            font-size: 16px;
+            h1 {
+                color: slategray;
+                padding: 0.8rem 1rem;
+                font-family: $font;
+                letter-spacing: 10px;
+                text-align: center;
+                line-height: 1;
+            }
+            span {
+                color: red;
+            }
+        }   
     }
 
     .intro {
@@ -179,11 +193,6 @@ nav {
             animation-name: opacity;
             animation-duration: 2s;
             animation-iteration-count: infinite;
-          }
-      
-          &-text {
-            // display: inline;
-            // margin: 0;
           }
       
           &-list {

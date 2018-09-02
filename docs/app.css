@@ -106,6 +106,17 @@ nav .logo {
       font-size: 26px;
       padding: 1rem;
       margin: 2rem; }
+    .intro-div .intro-text .logo {
+      font-size: 16px; }
+      .intro-div .intro-text .logo h1 {
+        color: slategray;
+        padding: 0.8rem 1rem;
+        font-family: Aclonica, sans-serif;
+        letter-spacing: 10px;
+        text-align: center;
+        line-height: 1; }
+      .intro-div .intro-text .logo span {
+        color: red; }
   .intro-div .intro {
     transform: translate(0%, 0%);
     margin-top: 2rem;
