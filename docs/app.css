@@ -105,7 +105,8 @@ nav .logo {
     .intro-div .intro-text p {
       font-size: 26px;
       padding: 1rem;
-      margin: 2rem; }
+      margin: 2rem;
+      font-weight: bold; }
     .intro-div .intro-text .logo {
       font-size: 16px; }
       .intro-div .intro-text .logo h1 {
@@ -124,7 +125,7 @@ nav .logo {
     overflow: hidden;
     font-family: 'Lato', sans-serif;
     font-size: 35px;
-    line-height: 40px;
+    line-height: 37px;
     color: slategray; }
     .intro-div .intro-container {
       font-weight: 600;
@@ -151,7 +152,7 @@ nav .logo {
         animation-duration: 2s;
         animation-iteration-count: infinite; }
       .intro-div .intro-container-list {
-        margin-top: 0;
+        margin-top: -38px;
         padding-left: 110px;
         text-align: left;
         list-style: none;
