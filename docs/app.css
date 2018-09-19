@@ -211,6 +211,21 @@ table {
   table tr:nth-child(even) {
     background-color: #C4C7CB; }
 
+.choice-tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ddd;
+  background-color: #222;
+  font-weight: bold;
+  padding: 1rem 1rem;
+  margin: 1rem 1rem;
+  line-height: 1;
+  text-align: center;
+  height: 200px;
+  width: 200px;
+  border-radius: 15%; }
+
 /* ADD */
 input[type=text], textarea {
   width: 100%;

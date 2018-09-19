@@ -1,34 +1,61 @@
 import React from 'react';
-import { HashRouter, Route, Switch, NavLink } from 'react-router-dom';
+import { HashRouter, Route, Switch, NavLink, Redirect } from 'react-router-dom';
 import Review from './Review.jsx';
 import styles from '../style.scss';
 
-const activeStyle = {
-    borderBottom: "3px solid red"
-};
+class ReviewSelection extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            clicked: false,
+            topic: "",
+        }
+    }
 
-const ReviewWords = () => <Review address="words" />;
-const ReviewSentences = () => <Review address="sentences" />;
+    reviewWords = () => {
+        this.setState({
+            clicked: true,
+            topic: "word",
+        })
+    }
 
-const ReviewSelection = () => (
-    <div>
-        <HashRouter>
-            <div>
-                <div className="choice-div">
-                    <div>
-                        <NavLink exact to='/review/word' activeStyle={activeStyle}>Word</NavLink>
-                    </div>
-                    <div>
-                        <NavLink exact to='/review/sentence' activeStyle={activeStyle}>Sentence</NavLink>
-                    </div>
+    reviewSentences = () => {
+        this.setState({
+            clicked: true,
+            topic: "sentence",
+        })
+    }
+
+    render() {
+        if (this.state.clicked && this.state.topic === "word") {
+            return (
+                <div>
+                    <Switch>
+                        <Redirect from="/review" exact to="/review/words" />
+                        <Review address="words" />
+                    </Switch>
                 </div>
-                <Switch>
-                    <Route exact path="/review/word" component={ReviewWords} />
-                    <Route path="/review/sentence" component={ReviewSentences} />
-                </Switch>
-            </div>
-        </HashRouter>
-    </div>
-)
+            )
+        }
+        else if (this.state.clicked && this.state.topic === "sentence") {
+            return (
+                <div>
+                    <Switch>
+                        <Redirect from="/review" exact to="/review/sentences" />
+                        <Review address="sentences" />
+                    </Switch>
+                </div>
+            )
+        }
+        else {
+            return (
+                <div>
+                    <div className="choice-tile" onClick={this.reviewWords}>Word</div>
+                    <div className="choice-tile" onClick={this.reviewSentences}>Sentence</div>
+                </div>
+            )
+        }
+    }
+}
 
 export default ReviewSelection;
