@@ -25,15 +25,15 @@ const Intro = () => {
                 <p>Use polyglot to learn several languages at a time.</p>
                 </Typist>
                 <h3>Learn</h3>
-                <Typist cursor={{show: false}}>
+                <Typist startDelay={1000} cursor={{show: false}}>
                 <p>Face the challenge of randomly drawn sets of words and sentences.</p>
                 </Typist>
                 <h3>Review</h3>
-                <Typist cursor={{show: false}}>
+                <Typist startDelay={4000} cursor={{show: false}}>
                 <p>Choose if you want to review single words and phrases or whole sentences.</p>
                 </Typist>             
                 <h3>Add</h3>
-                <Typist cursor={{show: false}}>
+                <Typist startDelay={8000} cursor={{show: false}}>
                 <p>You can easily add new items to your vocabulary lists and create your own sets of words.</p>
                 </Typist>
             </div>
