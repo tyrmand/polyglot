@@ -7,7 +7,7 @@
 body {
   font-size: 100%;
   font-family: "Helvetica", sans-serif;
-  background-color: #f2f2f2; }
+  background-color: gainsboro; }
 
 .wrong {
   border: 1px solid red !important; }
@@ -70,6 +70,8 @@ nav ul {
         transition: .2s width ease-in-out; }
       nav ul li a::before {
         left: 0; }
+      nav ul li a:hover {
+        background-color: rgba(68, 68, 68, 0.9); }
       nav ul li a:hover::after, nav ul li a:hover::before {
         width: 50%; }
 
@@ -211,20 +213,34 @@ table {
   table tr:nth-child(even) {
     background-color: #C4C7CB; }
 
-.choice-tile {
+.choice-tile-div {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #ddd;
-  background-color: #222;
-  font-weight: bold;
-  padding: 1rem 1rem;
-  margin: 1rem 1rem;
-  line-height: 1;
-  text-align: center;
-  height: 200px;
-  width: 200px;
-  border-radius: 15%; }
+  height: 94vh; }
+  .choice-tile-div .first {
+    background-color: rgba(68, 68, 68, 0.95) !important; }
+    .choice-tile-div .first:hover {
+      background-color: #444 !important; }
+    .choice-tile-div .first div:not(:hover) {
+      background-color: rgba(68, 68, 68, 0.95) !important; }
+  .choice-tile-div .choice-tile {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #ddd;
+    background-color: #444;
+    font-weight: bold;
+    padding: 1rem 1rem;
+    line-height: 1;
+    text-align: center;
+    height: 97%;
+    width: 50%;
+    font-size: 24px;
+    font-family: Aclonica, sans-serif;
+    letter-spacing: 10px; }
+    .choice-tile-div .choice-tile:hover {
+      background-color: rgba(68, 68, 68, 0.95); }
 
 /* ADD */
 input[type=text], textarea {

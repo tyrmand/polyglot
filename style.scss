@@ -6,7 +6,7 @@
 body {
     font-size: 100%;
     font-family: "Helvetica", sans-serif;
-    background-color: #f2f2f2;
+    background-color: gainsboro;
 }
 @import url('https://fonts.googleapis.com/css?family=Aclonica');
 @import url('https://fonts.googleapis.com/css?family=Lato');
@@ -82,6 +82,9 @@ nav {
                 }
                 &::before {
                     left: 0;
+                }
+                &:hover {
+                    background-color: rgba(68, 68, 68, 0.9)
                 }
                 &:hover::after, &:hover::before {
                     width: 50%;
@@ -305,20 +308,40 @@ table {
     }
 }
 
-.choice-tile {
+.choice-tile-div {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #ddd;
-    background-color: #222;
-    font-weight: bold;
-    padding: 1rem 1rem;
-    margin: 1rem 1rem;
-    line-height: 1;
-    text-align: center;
-    height: 200px;
-    width: 200px;
-    border-radius: 15%;
+    height: 94vh;
+    .first {
+        background-color: rgba(68, 68, 68, 0.95) !important;
+        &:hover {
+            background-color: #444 !important; 
+        }
+        div:not(:hover) {
+            background-color: rgba(68, 68, 68, 0.95) !important;
+        }
+    }
+    .choice-tile {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: #ddd;
+        background-color: #444;  
+        font-weight: bold;
+        padding: 1rem 1rem;
+        line-height: 1;
+        text-align: center;
+        height: 97%;
+        width: 50%;
+        font-size: 24px;
+        font-family: $font;
+        letter-spacing: 10px;
+        
+        &:hover {
+            background-color: rgba(68, 68, 68, 0.95);  
+        }
+    }
 }
 
 /* ADD */
@@ -327,6 +350,7 @@ input[type=text], textarea {
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
+    // background-color: gainsboro;
     border-radius: 4px;
     resize: vertical;
 }
