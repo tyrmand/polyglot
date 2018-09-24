@@ -1,31 +1,61 @@
 import React from 'react';
-import { HashRouter, Route, Switch, NavLink } from 'react-router-dom';
+import { HashRouter, Route, Switch, Redirect } from 'react-router-dom';
 import Add from './Add.jsx';
 import styles from '../style.scss';
 
-const activeStyle = {
-    borderBottom: "3px solid red"
-};
+class AddSelection extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            clicked: false,
+            topic: "",
+        }
+    }
 
-const AddSelection = () => (
-    <div>
-        <HashRouter>
-            <div>
-                <div className="choice-div">
-                    <div>
-                        <NavLink exact to='/add/word' activeStyle={activeStyle}>Word</NavLink>
-                    </div>
-                    <div>
-                        <NavLink exact to='/add/sentence' activeStyle={activeStyle}>Sentence</NavLink>
-                    </div>
+    addWords = () => {
+        this.setState({
+            clicked: true,
+            topic: "word",
+        })
+    }
+
+    addSentences = () => {
+        this.setState({
+            clicked: true,
+            topic: "sentence",
+        })
+    }
+
+    render() {
+        if (this.state.clicked && this.state.topic === "word") {
+            return (
+                <div>
+                    <Switch>
+                        <Redirect from="/add" exact to="/add/words" />
+                        <Add address="words" />
+                    </Switch>
                 </div>
-                <Switch>
-                    <Route exact path="/add/word" render={() => <Add address="words" />} />
-                    <Route path="/add/sentence" render={() => <Add address="sentences" /> } />
-                </Switch>
-            </div>
-        </HashRouter>
-    </div>
-)
+            )
+        }
+        else if (this.state.clicked && this.state.topic === "sentence") {
+            return (
+                <div>
+                    <Switch>
+                        <Redirect from="/add" exact to="/add/sentences" />
+                        <Add address="sentences" />
+                    </Switch>
+                </div>
+            )
+        }
+        else {
+            return (
+                <div className="choice-tile-div">
+                    <div className="choice-tile first" onClick={this.addWords}>Add Words</div>
+                    <div className="choice-tile second" onClick={this.addSentences}>Add Sentences</div>
+                </div>
+            )
+        }
+    }
+}
 
 export default AddSelection;

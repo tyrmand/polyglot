@@ -18,13 +18,13 @@ class Navigation extends React.Component {
                         <NavLink exact to='/' activeStyle={activeStyle}><i className="fas fa-home"></i> Home</NavLink>
                     </li>
                     <li key='learn'>
-                        <NavLink to='/learn' activeStyle={activeStyle}><i className="fab fa-leanpub"></i> Learn</NavLink>
+                        <NavLink exact to='/learn' activeStyle={activeStyle}><i className="fab fa-leanpub"></i> Learn</NavLink>
                     </li>
                     <li key='review'>
-                        <NavLink to='/review' activeStyle={activeStyle}><i className="fas fa-table"></i> Review</NavLink>
+                        <NavLink exact to='/review' activeStyle={activeStyle}><i className="fas fa-table"></i> Review</NavLink>
                     </li>    
                     <li key='add'>
-                        <NavLink to='/add' activeStyle={activeStyle}><i className="fas fa-edit"></i> Add</NavLink>
+                        <NavLink exact to='/add' activeStyle={activeStyle}><i className="fas fa-edit"></i> Add</NavLink>
                     </li>
                 </ul>
             </nav>                 

@@ -1,34 +1,61 @@
 import React from 'react';
-import { HashRouter, Route, Switch, NavLink } from 'react-router-dom';
+import { HashRouter, Route, Switch, Redirect } from 'react-router-dom';
 import Learn from './Learn.jsx';
 import styles from '../style.scss';
 
-const activeStyle = {
-    borderBottom: "3px solid red"
-};
+class LearnSelection extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            clicked: false,
+            topic: "",
+        }
+    }
 
-const LearnWords = () => <Learn address="words" />;
-const LearnSentences = () => <Learn address="sentences" />;
+    learnWords = () => {
+        this.setState({
+            clicked: true,
+            topic: "word",
+        })
+    }
 
-const LearnSelection = () => (
-    <div>
-        <HashRouter>
-            <div>
-                <div className="choice-div">
-                    <div>
-                        <NavLink exact to='/learn/word' activeStyle={activeStyle}>Word</NavLink>
-                    </div>
-                    <div>
-                        <NavLink to='/learn/sentence' activeStyle={activeStyle}>Sentence</NavLink>
-                    </div>
+    learnSentences = () => {
+        this.setState({
+            clicked: true,
+            topic: "sentence",
+        })
+    }
+
+    render() {
+        if (this.state.clicked && this.state.topic === "word") {
+            return (
+                <div>
+                    <Switch>
+                        <Redirect from="/learn" exact to="/learn/words" />
+                        <Learn address="words" />
+                    </Switch>
                 </div>
-                <Switch>
-                    <Route exact path="/learn/word" component={LearnWords} />
-                    <Route path="/learn/sentence" component={LearnSentences} />
-                </Switch>
-            </div>
-        </HashRouter>
-    </div>
-)
+            )
+        }
+        else if (this.state.clicked && this.state.topic === "sentence") {
+            return (
+                <div>
+                    <Switch>
+                        <Redirect from="/learn" exact to="/learn/sentences" />
+                        <Learn address="sentences" />
+                    </Switch>
+                </div>
+            )
+        }
+        else {
+            return (
+                <div className="choice-tile-div">
+                    <div className="choice-tile first" onClick={this.learnWords}>Learn Words</div>
+                    <div className="choice-tile second" onClick={this.learnSentences}>Learn Sentences</div>
+                </div>
+            )
+        }
+    }
+}
 
 export default LearnSelection;

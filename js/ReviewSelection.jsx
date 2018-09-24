@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter, Route, Switch, NavLink, Redirect } from 'react-router-dom';
+import { HashRouter, Route, Switch, Redirect } from 'react-router-dom';
 import Review from './Review.jsx';
 import styles from '../style.scss';
 
@@ -50,12 +50,8 @@ class ReviewSelection extends React.Component {
         else {
             return (
                 <div className="choice-tile-div">
-                    <div className="choice-tile first" 
-                        onClick={this.reviewWords}
->Review Words</div>
-                    <div className="choice-tile second" 
-                        onClick={this.reviewSentences}
->Review Sentences</div>
+                    <div className="choice-tile first" onClick={this.reviewWords}>Review Words</div>
+                    <div className="choice-tile second" onClick={this.reviewSentences}>Review Sentences</div>
                 </div>
             )
         }
