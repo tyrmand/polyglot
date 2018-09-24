@@ -45,20 +45,24 @@ class Add extends React.Component {
             german: this.state.german,
             spanish: this.state.spanish
         }
-
-        fetch('https://polyglot-app-pl.firebaseio.com/'+this.state.address+'.json', {
-            method: 'POST',
-            body: JSON.stringify(newWord),
-            headers: { "Content-Type": "application/json" }
-        })
-            .then(resp => resp.json())
-            .then(
-                this.setState({
-                    polish: "",
-                    english: "",
-                    german: "",
-                    spanish: "",
-            }))
+        if( this.state.polish !== "" &&
+            this.state.english !== "" &&
+            this.state.german !== "" &&
+            this.state.spanish !== "") {
+                fetch('https://polyglot-app-pl.firebaseio.com/'+this.state.address+'.json', {
+                    method: 'POST',
+                    body: JSON.stringify(newWord),
+                    headers: { "Content-Type": "application/json" }
+                })
+                    .then(resp => resp.json())
+                    .then(
+                        this.setState({
+                            polish: "",
+                            english: "",
+                            german: "",
+                            spanish: "",
+                    }))
+            }
     }
 
     render() {
