@@ -219,17 +219,18 @@ table {
   justify-content: center;
   height: 94vh; }
   .choice-tile-div .first {
-    background-color: rgba(68, 68, 68, 0.95) !important; }
+    background-color: rgba(68, 68, 68, 0.95); }
     .choice-tile-div .first:hover {
-      background-color: #444 !important; }
-    .choice-tile-div .first div:not(:hover) {
-      background-color: rgba(68, 68, 68, 0.95) !important; }
+      background-color: #444; }
+    .choice-tile-div .first:hover + .second {
+      background-color: rgba(68, 68, 68, 0.95); }
+  .choice-tile-div .second {
+    background-color: #444; }
   .choice-tile-div .choice-tile {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     color: #ddd;
-    background-color: #444;
     font-weight: bold;
     padding: 1rem 1rem;
     line-height: 1;
@@ -239,8 +240,6 @@ table {
     font-size: 24px;
     font-family: Aclonica, sans-serif;
     letter-spacing: 10px; }
-    .choice-tile-div .choice-tile:hover {
-      background-color: rgba(68, 68, 68, 0.95); }
 
 /* ADD */
 input[type=text], textarea {

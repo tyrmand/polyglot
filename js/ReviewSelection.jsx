@@ -52,12 +52,10 @@ class ReviewSelection extends React.Component {
                 <div className="choice-tile-div">
                     <div className="choice-tile first" 
                         onClick={this.reviewWords}
-                        onMouseOver={{"background-color": "#444"}}
-                        onMouseOut={{"background-color": "rgba(68, 68, 68, 0.95)"}}>Review Words</div>
-                    <div className="choice-tile" 
+>Review Words</div>
+                    <div className="choice-tile second" 
                         onClick={this.reviewSentences}
-                        onMouseOut={{"background-color": "#444"}}
-                        onMouseOver={{"background-color": "rgba(68, 68, 68, 0.95)"}}>Review Sentences</div>
+>Review Sentences</div>
                 </div>
             )
         }
