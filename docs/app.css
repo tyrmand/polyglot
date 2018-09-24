@@ -93,36 +93,44 @@ nav .logo {
   width: 100%;
   height: 100vh;
   display: flex;
-  justify-content: center; }
-  .intro-div .intro-text {
-    margin-top: 120px;
-    position: absolute;
+  flex-direction: row;
+  flex-wrap: wrap; }
+  .intro-div .intro-logo {
+    width: 50%;
     display: flex;
     text-align: center;
     justify-content: center;
     flex-direction: column; }
-    .intro-div .intro-text h3 {
-      font-size: 26px;
-      font-family: Aclonica, sans-serif;
-      letter-spacing: 5px; }
-    .intro-div .intro-text p {
+    .intro-div .intro-logo p {
       font-size: 26px;
       padding: 1rem;
-      margin: 2rem;
+      margin: 1rem;
       font-weight: bold; }
-    .intro-div .intro-text .logo {
+    .intro-div .intro-logo .logo {
       font-size: 16px; }
-      .intro-div .intro-text .logo h1 {
+      .intro-div .intro-logo .logo h1 {
         color: slategray;
         padding: 0.8rem 1rem;
         font-family: Aclonica, sans-serif;
         letter-spacing: 10px;
         text-align: center;
         line-height: 1; }
-      .intro-div .intro-text .logo span {
+      .intro-div .intro-logo .logo span {
         color: red; }
-  .intro-div .intro {
-    transform: translate(0%, 0%);
+  .intro-div .intro-learn, .intro-div .intro-add, .intro-div .intro-review {
+    width: 33%;
+    text-align: center; }
+    .intro-div .intro-learn h2, .intro-div .intro-add h2, .intro-div .intro-review h2 {
+      font-size: 26px;
+      font-family: Aclonica, sans-serif;
+      letter-spacing: 5px; }
+    .intro-div .intro-learn p, .intro-div .intro-add p, .intro-div .intro-review p {
+      font-size: 26px;
+      padding: 1rem;
+      margin: 2rem;
+      font-weight: bold; }
+  .intro-div .intro-revolve {
+    transform: translate(50%, 100%);
     margin-top: 2rem;
     height: 160px;
     overflow: hidden;
@@ -130,19 +138,20 @@ nav .logo {
     font-size: 35px;
     line-height: 37px;
     color: slategray; }
-    .intro-div .intro-container {
+    .intro-div .intro-revolve-container {
+      width: 50;
       font-weight: 600;
       overflow: hidden;
       height: 40px;
       padding: 0 40px; }
-      .intro-div .intro-container:before {
+      .intro-div .intro-revolve-container:before {
         content: '[';
         left: 0; }
-      .intro-div .intro-container:after {
+      .intro-div .intro-revolve-container:after {
         content: ']';
         position: absolute;
         right: 0; }
-      .intro-div .intro-container:after, .intro-div .intro-container:before {
+      .intro-div .intro-revolve-container:after, .intro-div .intro-revolve-container:before {
         position: absolute;
         top: 0;
         color: red;
@@ -154,7 +163,7 @@ nav .logo {
         animation-name: opacity;
         animation-duration: 2s;
         animation-iteration-count: infinite; }
-      .intro-div .intro-container-list {
+      .intro-div .intro-revolve-container-list {
         margin-top: -38px;
         padding-left: 110px;
         text-align: left;
@@ -165,7 +174,7 @@ nav .logo {
         animation-name: change;
         animation-duration: 10s;
         animation-iteration-count: infinite; }
-        .intro-div .intro-container-list-item {
+        .intro-div .intro-revolve-container-list-item {
           line-height: 40px;
           margin: 0; }
 
