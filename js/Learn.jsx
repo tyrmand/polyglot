@@ -20,8 +20,8 @@ class Learn extends React.Component {
                 let word = data[Math.floor(Math.random() * data.length)];
                 let languages = Object.keys(word).filter((element) => element !== "id"); // filter
                 let visibleLanguage = languages[Math.floor(Math.random() * languages.length)];
-                console.log(languages);
-                console.log(word);
+                // console.log(languages);
+                // console.log(word);
                 this.setState({
                     word: word,
                     visibleLanguage: visibleLanguage
@@ -33,7 +33,7 @@ class Learn extends React.Component {
     };
 
     getLanguages = () => {
-        console.log(this.state.word);
+        // console.log(this.state.word);
         return Object.keys(this.state.word).filter((element) => element !== "id");
     }
 
@@ -67,7 +67,6 @@ class Learn extends React.Component {
 
     show = (event, language) => {
         event.preventDefault();
-        console.log("Pokaż się!");
         this.setState((state) => {
             return {
                 answers: { ...state.word, [language]: state.word[language] },
