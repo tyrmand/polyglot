@@ -16,6 +16,10 @@ $font: Aclonica, sans-serif;
     border: 1px solid red !important;
 }
 
+a:focus { 
+    outline: none; 
+}
+
 .show {
     margin-right: 10px;
     position: relative;
