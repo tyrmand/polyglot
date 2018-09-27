@@ -12,6 +12,9 @@ body {
 .wrong {
   border: 1px solid red !important; }
 
+a:focus {
+  outline: none; }
+
 .show {
   margin-right: 10px;
   position: relative;
@@ -96,6 +99,7 @@ nav .logo {
   flex-direction: row;
   flex-wrap: wrap; }
   .intro-div .intro-logo {
+    margin-left: 20px;
     width: 50%;
     display: flex;
     text-align: center;

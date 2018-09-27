@@ -26,23 +26,23 @@ const Intro = () => {
             <div className="intro-learn">
                 <h2>Learn</h2>
                 <h3>Study your vocabulary</h3>
-                <Typist startDelay={1000} cursor={{ show: false }}>
+                {/* <Typist startDelay={1000} cursor={{ show: false }}> */}
                     <p>Face the challenge of randomly drawn sets of words and sentences.</p>
-                </Typist>
+                {/* </Typist> */}
             </div>
             <div className="intro-review">
                 <h2>Review</h2>
                 <h3>Choose what to review</h3>
-                <Typist startDelay={1000} cursor={{ show: false }}>
+                {/* <Typist startDelay={1000} cursor={{ show: false }}> */}
                     <p>Make a decision if you want to review single words and phrases or whole sentences.</p>
-                </Typist>
+                {/* </Typist> */}
             </div>
             <div className="intro-add">
                 <h2>Add</h2>
                 <h3>Create your own sets of words</h3>
-                <Typist startDelay={1000} cursor={{ show: false }}>
+                {/* <Typist startDelay={1000} cursor={{ show: false }}> */}
                     <p>You can easily add new items to your vocabulary lists and create your own sets of words.</p>
-                </Typist>
+                {/* </Typist> */}
             </div>
         </div >
     )
