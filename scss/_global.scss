@@ -13,9 +13,44 @@ body {
 @import url('https://fonts.googleapis.com/css?family=Lato');
 $font: Aclonica, sans-serif;
 
+.choice-tile-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 94vh;
+    .first {
+        background-color: rgba(68, 68, 68, 0.95);
+        &:hover {
+            background-color: #444; 
+        }
+        &:hover + .second {
+            background-color: rgba(68, 68, 68, 0.95); 
+        }    
+    }
+    .second {
+        background-color: #444;
+    }
+    .choice-tile {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: #ddd; 
+        font-weight: bold;
+        padding: 1rem 1rem;
+        line-height: 1;
+        text-align: center;
+        height: 97%;
+        width: 50%;
+        font-size: 24px;
+        font-family: $font;
+        letter-spacing: 10px;
+    }
+}
+
 .form-div {
     display: flex;
     justify-content: center;
+    margin-top: 10px;
     form {
         width: 60%;
         .row {
@@ -37,5 +72,160 @@ $font: Aclonica, sans-serif;
             display: table;
             clear: both;
         }
+        .button-row {
+            display: flex;
+            justify-content: flex-end;
+            position: relative;
+            button {
+                background-color: #222;
+                color: white;
+                padding: 12px 20px;
+                border: none;
+                border-top-left-radius: 4px;
+                border-top-right-radius: 4px;
+                cursor: pointer;
+                margin-top: 10px;
+                font-size: 16px;
+                font-weight: bold;
+                width: 25%;
+                &.show {
+                    margin-right: 10px;
+                    position: relative;
+                    background-color: #222;
+                    color: white;
+                    padding: 12px 20px;
+                    border: none;
+                    border-top-left-radius: 4px;
+                    border-top-right-radius: 4px;
+                    cursor: pointer;
+                    margin-top: 10px;
+                    font-size: 16px;
+                    font-weight: bold;
+                    width: 25%;
+                    &::before, &::after {
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        bottom: 0;
+                        right: 0;
+                        width: 0%;
+                        height: 3px;
+                        background: red;
+                        transition:  .2s width ease-in-out;
+                    }
+                    &::before {
+                        left: 0;
+                    }
+                    &:hover::after {
+                        width: 100%;
+                    }
+                }
+                &.check, &.add {
+                    &::before, &::after {
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        bottom: 0;
+                        right: 0;
+                        width: 0%;
+                        height: 3px;
+                        background: red;
+                        transition:  .2s width ease-in-out;
+                    }
+                    &::before {
+                        left: 0;
+                    }
+                    &:hover::after {
+                        width: 25%;
+                    }
+                }
+            }
+        }
     }
+}
+
+/* RWD */
+
+@media only screen and (max-width: 600px) {
+
+    .form-div {
+        display: flex;
+        justify-content: center;
+        form {
+            width: 80%;
+            .col-25, .col-75 {
+                width: 100%;
+                margin-top: 0;
+                display: flex;
+                justify-content: center;
+            }
+            .col-25 {
+                text-align: center;
+            }
+            .word-row {
+                margin-top: 20px;
+                margin-bottom: 10px;                
+                display: flex;
+                justify-content: center;
+                h2 {
+                    width: 80%;
+                    text-align: center;
+                    word-wrap: break-word;
+                }
+            }
+            .button-row {
+                display: flex;
+                justify-content: center;
+                button {
+                    width: 100%;
+                    margin-top: 20px;
+                    &.show {
+                        margin-right: 10px;
+                        position: relative;
+                        // &::before, &::after {
+                        //     content: "";
+                        //     display: block;
+                        //     position: absolute;
+                        //     bottom: 0;
+                        //     right: 0;
+                        //     width: 0%;
+                        //     height: 3px;
+                        //     background: red;
+                        //     transition:  .2s width ease-in-out;
+                        // }
+                        // &::before {
+                        //     left: 0;
+                        // }
+                        // &:hover::before, &:hover::after {
+                        //     width: 50%;
+                        // }
+                    }
+                    &.check, &.add {
+                        &::before, &::after {
+                            content: "";
+                            display: block;
+                            position: absolute;
+                            bottom: 0;
+                            right: 0;
+                            width: 0%;
+                            height: 3px;
+                            background: red;
+                            transition:  .2s width ease-in-out;
+                        }
+                        &::before {
+                            left: 0;
+                        }
+                        &:hover::after {
+                            width: 48.5%;
+                        }
+                    }
+                    &.add {
+                        &:hover::after {
+                            width: 100%;
+                        }
+                    }  
+                }
+            }
+        }
+    }    
 }

@@ -101,8 +101,8 @@ class Add extends React.Component {
                             <input type="text" id="spanish" value={this.state.spanish} onChange={this.addSpanish}></input>
                         </div>
                     </div>
-                    <div className="submit-row">
-                        <button onClick={this.click}>Add</button>
+                    <div className="button-row">
+                        <button className="add" onClick={this.click}>Add</button>
                     </div>
                 </form>
             </div>
