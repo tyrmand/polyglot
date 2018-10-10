@@ -182,23 +182,6 @@ $font: Aclonica, sans-serif;
                     &.show {
                         margin-right: 10px;
                         position: relative;
-                        // &::before, &::after {
-                        //     content: "";
-                        //     display: block;
-                        //     position: absolute;
-                        //     bottom: 0;
-                        //     right: 0;
-                        //     width: 0%;
-                        //     height: 3px;
-                        //     background: red;
-                        //     transition:  .2s width ease-in-out;
-                        // }
-                        // &::before {
-                        //     left: 0;
-                        // }
-                        // &:hover::before, &:hover::after {
-                        //     width: 50%;
-                        // }
                     }
                     &.check, &.add {
                         &::before, &::after {
