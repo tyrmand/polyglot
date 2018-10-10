@@ -1,7 +1,7 @@
 import React from 'react';
 import { HashRouter, Route, Switch, Redirect } from 'react-router-dom';
 import Review from './Review.jsx';
-import styles from '../style.scss';
+import styles from '../scss/style.scss';
 
 class ReviewSelection extends React.Component {
     constructor(props) {

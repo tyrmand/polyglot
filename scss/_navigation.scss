@@ -1,0 +1,61 @@
+a:focus { 
+    outline: none; 
+}
+
+nav {
+    ul {
+        list-style: none;
+        background: #444;
+        li {
+            border-bottom: 1px solid slategray;
+            position: relative;
+            a {
+                color: #ddd;
+                font-weight: bold;
+                text-decoration: none;
+                padding: .8rem 1rem;
+                display: block;
+                line-height: 1;
+                text-align: center;
+                &.active {
+                    border-bottom: 3px solid red !important;  
+                }
+                &::before, &::after {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    bottom: -1px;
+                    right: 0;
+                    width: 0%;
+                    height: 3px;
+                    background: red;
+                    transition:  .2s width ease-in-out;
+                }
+                &::before {
+                    left: 0;
+                }
+                &:hover {
+                    background-color: rgba(68, 68, 68, 0.9)
+                }
+                &:hover::after, &:hover::before {
+                    width: 50%;
+                }
+            }
+        }
+    }
+    .logo {
+        background: #222;
+        font-size: 16px;
+        h1 {
+            color: slategray;
+            padding: 0.8rem 1rem;
+            font-family: $font;
+            letter-spacing: 10px;
+            text-align: center;
+            line-height: 1;
+        }
+        span {
+            color: red;
+        }
+    }
+}

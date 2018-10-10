@@ -1,7 +1,7 @@
 import React from 'react';
 import { HashRouter, Route, Switch, Redirect } from 'react-router-dom';
 import Add from './Add.jsx';
-import styles from '../style.scss';
+import styles from '../scss/style.scss';
 
 class AddSelection extends React.Component {
     constructor(props) {

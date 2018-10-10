@@ -7,7 +7,7 @@ import ReviewSelection from './ReviewSelection.jsx';
 import AddSelection from './AddSelection.jsx';
 import Review from './Review.jsx';
 
-import styles from '../style.scss';
+import styles from '../scss/style.scss';
 
 const ReviewWords = () => <Review address="words" />;
 const ReviewSentences = () => <Review address="sentences" />;
