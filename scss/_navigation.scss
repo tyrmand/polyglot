@@ -59,3 +59,32 @@ nav {
         }
     }
 }
+
+@media only screen and (min-width: 600px) {
+    nav {
+        display: flex;
+        justify-content: space-between;
+        background-color: #222;
+        ul {
+            display: flex;
+            align-items: center;
+            background: none;
+            li {
+                border-bottom: none;
+                position: relative;
+                a {
+                    padding: 1.2rem 1rem;
+                    border-bottom: none;
+                    &.active {
+                        border-bottom: 3px solid red !important;  
+                    }
+                }
+            }
+        }
+        .logo {
+            h1 {
+                margin: .4rem 1rem;
+            }
+        }
+    }
+}

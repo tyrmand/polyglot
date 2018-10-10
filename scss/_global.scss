@@ -13,4 +13,29 @@ body {
 @import url('https://fonts.googleapis.com/css?family=Lato');
 $font: Aclonica, sans-serif;
 
-
+.form-div {
+    display: flex;
+    justify-content: center;
+    form {
+        width: 60%;
+        .row {
+            width: 100%;
+            .col-25 {
+                float: left;
+                width: 20%;
+                margin-top: 6px;
+                text-align: right;
+            }
+            .col-75 {
+                float: left;
+                width: 80%;
+                margin-top: 6px;
+            }
+        }
+        .row:after, .submit-row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    }
+}
