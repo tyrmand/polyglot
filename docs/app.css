@@ -9,8 +9,162 @@ body {
   font-family: "Helvetica", sans-serif;
   background-color: gainsboro; }
 
-a:focus {
-  outline: none; }
+.choice-tile-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 94vh; }
+  .choice-tile-div .first {
+    background-color: rgba(68, 68, 68, 0.95); }
+    .choice-tile-div .first:hover {
+      background-color: #444; }
+    .choice-tile-div .first:hover + .second {
+      background-color: rgba(68, 68, 68, 0.95); }
+  .choice-tile-div .second {
+    background-color: #444; }
+  .choice-tile-div .choice-tile {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #ddd;
+    font-weight: bold;
+    padding: 1rem 1rem;
+    line-height: 1;
+    text-align: center;
+    height: 97%;
+    width: 50%;
+    font-size: 24px;
+    font-family: Aclonica, sans-serif;
+    letter-spacing: 10px; }
+
+.form-div {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px; }
+  .form-div form {
+    width: 60%; }
+    .form-div form .row {
+      width: 100%; }
+      .form-div form .row .col-25 {
+        float: left;
+        width: 20%;
+        margin-top: 6px;
+        text-align: right; }
+      .form-div form .row .col-75 {
+        float: left;
+        width: 80%;
+        margin-top: 6px; }
+    .form-div form .row:after, .form-div form .submit-row:after {
+      content: "";
+      display: table;
+      clear: both; }
+    .form-div form .button-row {
+      display: flex;
+      justify-content: flex-end;
+      position: relative; }
+      .form-div form .button-row button {
+        background-color: #222;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+        cursor: pointer;
+        margin-top: 10px;
+        font-size: 16px;
+        font-weight: bold;
+        width: 25%; }
+        .form-div form .button-row button.show {
+          margin-right: 10px;
+          position: relative;
+          background-color: #222;
+          color: white;
+          padding: 12px 20px;
+          border: none;
+          border-top-left-radius: 4px;
+          border-top-right-radius: 4px;
+          cursor: pointer;
+          margin-top: 10px;
+          font-size: 16px;
+          font-weight: bold;
+          width: 25%; }
+          .form-div form .button-row button.show::before, .form-div form .button-row button.show::after {
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 0%;
+            height: 3px;
+            background: red;
+            transition: .2s width ease-in-out; }
+          .form-div form .button-row button.show::before {
+            left: 0; }
+          .form-div form .button-row button.show:hover::after {
+            width: 100%; }
+        .form-div form .button-row button.check::before, .form-div form .button-row button.check::after, .form-div form .button-row button.add::before, .form-div form .button-row button.add::after {
+          content: "";
+          display: block;
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          width: 0%;
+          height: 3px;
+          background: red;
+          transition: .2s width ease-in-out; }
+        .form-div form .button-row button.check::before, .form-div form .button-row button.add::before {
+          left: 0; }
+        .form-div form .button-row button.check:hover::after, .form-div form .button-row button.add:hover::after {
+          width: 25%; }
+
+/* RWD */
+@media only screen and (max-width: 600px) {
+  .form-div {
+    display: flex;
+    justify-content: center; }
+    .form-div form {
+      width: 80%; }
+      .form-div form .col-25, .form-div form .col-75 {
+        width: 100%;
+        margin-top: 0;
+        display: flex;
+        justify-content: center; }
+      .form-div form .col-25 {
+        text-align: center; }
+      .form-div form .word-row {
+        margin-top: 20px;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: center; }
+        .form-div form .word-row h2 {
+          width: 80%;
+          text-align: center;
+          word-wrap: break-word; }
+      .form-div form .button-row {
+        display: flex;
+        justify-content: center; }
+        .form-div form .button-row button {
+          width: 100%;
+          margin-top: 20px; }
+          .form-div form .button-row button.show {
+            margin-right: 10px;
+            position: relative; }
+          .form-div form .button-row button.check::before, .form-div form .button-row button.check::after, .form-div form .button-row button.add::before, .form-div form .button-row button.add::after {
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 0%;
+            height: 3px;
+            background: red;
+            transition: .2s width ease-in-out; }
+          .form-div form .button-row button.check::before, .form-div form .button-row button.add::before {
+            left: 0; }
+          .form-div form .button-row button.check:hover::after, .form-div form .button-row button.add:hover::after {
+            width: 48.5%; }
+          .form-div form .button-row button.add:hover::after {
+            width: 100%; } }
 
 nav ul {
   list-style: none;
@@ -26,6 +180,8 @@ nav ul {
       display: block;
       line-height: 1;
       text-align: center; }
+      nav ul li a:focus {
+        outline: none; }
       nav ul li a.active {
         border-bottom: 3px solid red !important; }
       nav ul li a::before, nav ul li a::after {
@@ -57,6 +213,27 @@ nav .logo {
     line-height: 1; }
   nav .logo span {
     color: red; }
+
+@media only screen and (min-width: 600px) {
+  nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: #222;
+    width: 100%; }
+    nav ul {
+      display: flex;
+      align-items: center;
+      background: none; }
+      nav ul li {
+        border-bottom: none;
+        position: relative; }
+        nav ul li a {
+          padding: 1.2rem 1rem;
+          border-bottom: none; }
+          nav ul li a.active {
+            border-bottom: 3px solid red !important; }
+    nav .logo h1 {
+      margin: .4rem 1rem; } }
 
 .intro-div {
   width: 100%;
@@ -168,24 +345,21 @@ nav .logo {
   83.3%, 95.96% {
     transform: translate3d(0, -25%, 0); } }
 
-.choice-div {
-  height: 50px;
-  background-color: #444; }
-  .choice-div div {
-    width: 50%;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center; }
-    .choice-div div a {
-      color: #ddd;
-      font-weight: bold;
-      text-decoration: none;
-      padding: 1rem 1rem;
-      display: block;
-      line-height: 1;
-      text-align: center;
-      height: 100%;
+@media only screen and (max-width: 600px) {
+  .intro-div {
+    width: 100%;
+    display: flex;
+    justify-content: center; }
+    .intro-div .intro-text {
+      margin-top: 8rem; }
+    .intro-div h1 {
+      margin-top: 3rem; }
+    .intro-div .intro-learn, .intro-div .intro-add, .intro-div .intro-review {
       width: 100%; }
+    .intro-div .intro-revolve {
+      position: absolute;
+      top: 1150px;
+      right: 230px; } }
 
 .word-row {
   margin-top: 20px;
@@ -208,7 +382,7 @@ nav .logo {
 table {
   border-collapse: collapse;
   border-spacing: 0;
-  width: 100%;
+  width: 80%;
   border: 1px solid #ddd;
   font-size: 16px; }
   table th {
@@ -222,33 +396,14 @@ table {
   table tr:nth-child(even) {
     background-color: #C4C7CB; }
 
-.choice-tile-div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 94vh; }
-  .choice-tile-div .first {
-    background-color: rgba(68, 68, 68, 0.95); }
-    .choice-tile-div .first:hover {
-      background-color: #444; }
-    .choice-tile-div .first:hover + .second {
-      background-color: rgba(68, 68, 68, 0.95); }
-  .choice-tile-div .second {
-    background-color: #444; }
-  .choice-tile-div .choice-tile {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    color: #ddd;
-    font-weight: bold;
-    padding: 1rem 1rem;
-    line-height: 1;
-    text-align: center;
-    height: 97%;
-    width: 50%;
-    font-size: 24px;
-    font-family: Aclonica, sans-serif;
-    letter-spacing: 10px; }
+/* RWD */
+@media only screen and (max-width: 600px) {
+  table, thead, tbody, th, td, tr {
+    display: block; }
+  table {
+    width: 100%; }
+  td {
+    width: 90% !important; } }
 
 input[type=text], textarea {
   width: 100%;
@@ -261,191 +416,4 @@ label {
   padding: 12px 12px 12px 0;
   display: inline-block;
   font-weight: bold; }
-
-.submit-row, .button-row {
-  display: flex;
-  justify-content: flex-end;
-  position: relative; }
-  .submit-row button, .button-row button {
-    background-color: #222;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-    cursor: pointer;
-    margin-top: 10px;
-    font-size: 16px;
-    font-weight: bold;
-    width: 25%; }
-    .submit-row button.show::before, .submit-row button.show::after, .button-row button.show::before, .button-row button.show::after {
-      content: "";
-      display: block;
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      width: 0%;
-      height: 3px;
-      background: red;
-      transition: .2s width ease-in-out; }
-    .submit-row button.show::before, .button-row button.show::before {
-      left: 0; }
-    .submit-row button.show:hover::after, .button-row button.show:hover::after {
-      width: 100%; }
-    .submit-row button.check::before, .submit-row button.check::after, .button-row button.check::before, .button-row button.check::after {
-      content: "";
-      display: block;
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      width: 0%;
-      height: 3px;
-      background: red;
-      transition: .2s width ease-in-out; }
-    .submit-row button.check::before, .button-row button.check::before {
-      left: 0; }
-    .submit-row button.check:hover::after, .button-row button.check:hover::after {
-      width: 25%; }
-
-.form-div {
-  margin-top: 10px; }
-
-.show {
-  margin-right: 10px;
-  position: relative;
-  background-color: #222;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
-  cursor: pointer;
-  margin-top: 10px;
-  font-size: 16px;
-  font-weight: bold;
-  width: 25%; }
-  .show::before, .show::after {
-    content: "";
-    display: block;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 0%;
-    height: 3px;
-    background: red;
-    transition: .2s width ease-in-out; }
-  .show::before {
-    left: 0; }
-  .show:hover::after {
-    width: 25%; }
-
-/* RWD */
-@media only screen and (max-width: 600px) {
-  table, thead, tbody, th, td, tr {
-    display: block; }
-  td {
-    width: 90% !important; }
-  .intro-div {
-    width: 100%;
-    display: flex;
-    justify-content: center; }
-    .intro-div .intro-text {
-      margin-top: 8rem; }
-  .form-div {
-    display: flex;
-    justify-content: center; }
-    .form-div form {
-      width: 80%; }
-      .form-div form .col-25, .form-div form .col-75 {
-        width: 100%;
-        margin-top: 0;
-        display: flex;
-        justify-content: center; }
-      .form-div form .col-25 {
-        text-align: center; }
-      .form-div form .word-row {
-        margin-top: 20px;
-        margin-bottom: 10px;
-        display: flex;
-        justify-content: center; }
-        .form-div form .word-row h2 {
-          width: 80%;
-          text-align: center;
-          word-wrap: break-word; }
-      .form-div form .submit-row, .form-div form .button-row {
-        display: flex;
-        justify-content: center; }
-        .form-div form .submit-row button, .form-div form .button-row button {
-          width: 100%;
-          margin-top: 20px; }
-          .form-div form .submit-row button.show::before, .form-div form .submit-row button.show::after, .form-div form .button-row button.show::before, .form-div form .button-row button.show::after {
-            content: "";
-            display: block;
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 0%;
-            height: 3px;
-            background: red;
-            transition: .2s width ease-in-out; }
-          .form-div form .submit-row button.show::before, .form-div form .button-row button.show::before {
-            left: 0; }
-          .form-div form .submit-row button.show:hover::before, .form-div form .submit-row button.show:hover::after, .form-div form .button-row button.show:hover::before, .form-div form .button-row button.show:hover::after {
-            width: 50%; }
-          .form-div form .submit-row button.check::before, .form-div form .submit-row button.check::after, .form-div form .button-row button.check::before, .form-div form .button-row button.check::after {
-            content: "";
-            display: block;
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 0%;
-            height: 3px;
-            background: red;
-            transition: .2s width ease-in-out; }
-          .form-div form .submit-row button.check::before, .form-div form .button-row button.check::before {
-            left: 0; }
-          .form-div form .submit-row button.check:hover::after, .form-div form .button-row button.check:hover::after {
-            width: 49%; } }
-
-@media only screen and (min-width: 600px) {
-  nav {
-    display: flex;
-    justify-content: space-between;
-    background-color: #222; }
-    nav ul {
-      display: flex;
-      align-items: center;
-      background: none; }
-      nav ul li {
-        border-bottom: none;
-        position: relative; }
-        nav ul li a {
-          padding: 1.2rem 1rem;
-          border-bottom: none; }
-          nav ul li a.active {
-            border-bottom: 3px solid red !important; }
-    nav .logo h1 {
-      margin: .4rem 1rem; }
-  table {
-    width: 80%; }
-  .form-div {
-    display: flex;
-    justify-content: center; }
-    .form-div form {
-      width: 60%; }
-      .form-div form .row {
-        width: 100%; }
-        .form-div form .row .col-25 {
-          float: left;
-          width: 20%;
-          margin-top: 6px;
-          text-align: right; }
-        .form-div form .row .col-75 {
-          float: left;
-          width: 80%;
-          margin-top: 6px; }
-      .form-div form .row:after, .form-div form .submit-row:after {
-        content: "";
-        display: table;
-        clear: both; } }
 
