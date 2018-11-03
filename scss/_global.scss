@@ -148,6 +148,15 @@ $font: Aclonica, sans-serif;
 
 @media only screen and (max-width: 600px) {
 
+    .choice-tile-div {
+        display: block;
+
+        .choice-tile {
+            width: 100%;
+            height: 33vh;
+            padding: 0;
+        }
+    }
     .form-div {
         display: flex;
         justify-content: center;
